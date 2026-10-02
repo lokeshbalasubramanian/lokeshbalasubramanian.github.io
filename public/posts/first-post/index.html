@@ -1,0 +1,265 @@
+<!doctype html>
+
+
+
+
+
+
+
+<html class="not-ready lg:text-base" style="--bg:#faf8f1"
+  lang="en-us"
+  dir="ltr"><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>An Intuitive Guide to Physics-Informed Neural Networks (PINNs) - Lokesh Balasubramanian</title>
+
+  
+  <meta name="theme-color" />
+
+  <meta name="description" content="A gentle introduction to embedding physical laws and differential equations directly into deep learning models." />
+  <meta name="author" content="Lokesh Balasubramanian" /><link rel="preload stylesheet" as="style" href="https://lokeshbalasubramanian.github.io/main.min.a65a18675ecbe44231bb502b114217ce2abb4c5869f3ff4ecac8228df5e89d80.css" integrity="sha256-ploYZ17L5EIxu1ArEUIXziq7TFhp8/9OysgijfXonYA=" />
+
+  
+  <link rel="preload" as="image" href="https://lokeshbalasubramanian.github.io/theme.png" />
+
+  <link rel="preload" as="image" href="https://lokeshbalasubramanian.github.io/images/profile_pic.png" />
+
+  <link rel="preload" as="image" href="https://lokeshbalasubramanian.github.io/twitter.svg" /><link rel="preload" as="image" href="https://lokeshbalasubramanian.github.io/github.svg" /><link rel="preload" as="image" href="https://lokeshbalasubramanian.github.io/linkedin.svg" /><link rel="preload" as="image" href="https://lokeshbalasubramanian.github.io/email.svg" />
+
+  <script
+    defer
+    src="https://lokeshbalasubramanian.github.io/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad()"
+  ></script>
+
+  
+  <link
+    rel="icon"
+    href="https://lokeshbalasubramanian.github.io/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://lokeshbalasubramanian.github.io/apple-touch-icon.png"
+  />
+
+  <meta name="generator" content="Hugo 0.163.3">
+	<meta itemprop="name" content="An Intuitive Guide to Physics-Informed Neural Networks (PINNs)">
+	<meta itemprop="description" content="A gentle introduction to embedding physical laws and differential equations directly into deep learning models.">
+	<meta itemprop="datePublished" content="2026-06-25T10:00:00+05:30">
+	<meta itemprop="dateModified" content="2026-06-25T10:00:00+05:30">
+	<meta itemprop="wordCount" content="471">
+	<meta itemprop="keywords" content="Deep Learning,Physics-Informed ML,Tutorials"><meta property="og:url" content="https://lokeshbalasubramanian.github.io/posts/first-post/">
+	<meta property="og:site_name" content="Lokesh Balasubramanian">
+	<meta property="og:title" content="An Intuitive Guide to Physics-Informed Neural Networks (PINNs)">
+	<meta property="og:description" content="A gentle introduction to embedding physical laws and differential equations directly into deep learning models.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2026-06-25T10:00:00+05:30">
+		<meta property="article:modified_time" content="2026-06-25T10:00:00+05:30">
+		<meta property="article:tag" content="Deep Learning">
+		<meta property="article:tag" content="Physics-Informed ML">
+		<meta property="article:tag" content="Tutorials">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="An Intuitive Guide to Physics-Informed Neural Networks (PINNs)">
+	<meta name="twitter:description" content="A gentle introduction to embedding physical laws and differential equations directly into deep learning models.">
+
+  <link rel="canonical" href="https://lokeshbalasubramanian.github.io/posts/first-post/" />
+</head>
+<body
+  class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"><header class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center">
+  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="https://lokeshbalasubramanian.github.io/">Lokesh Balasubramanian</a>
+    <div
+      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button" aria-label="Dark"></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
+    role="button" aria-label="Menu"></div>
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? "rgb(0 0 0 / 85%)" : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"><nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"><a class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal" href="/posts/">Posts</a><a class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal" href="/cv/">CV</a><a class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal" href="/publications/">Publications</a></nav><nav
+      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert">
+      <a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/lokesh319486066"
+        target="_blank"
+        rel="me">twitter</a>
+      <a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/lokeshbalasubramanian"
+        target="_blank"
+        rel="me">github</a>
+      <a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./linkedin.svg)"
+        href="https://linkedin.com/in/lokeshbalasubramanian"
+        target="_blank"
+        rel="me">linkedin</a>
+      <a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./email.svg)"
+        href="mailto:ph1221858@iitd.ac.in"
+        target="_self"
+        rel="me">email</a>
+    </nav>
+  </div>
+</header><main
+    class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"><article>
+  <header class="mb-14">
+    <h1 class="my-0! pb-2.5">An Intuitive Guide to Physics-Informed Neural Networks (PINNs)</h1><div class="text-xs antialiased opacity-60"><time>Jun 25, 2026</time><span class="mx-1">&middot;</span>
+      <span>Lokesh Balasubramanian</span></div></header>
+
+  <section class="prose dark:prose-invert" style="max-width: 100%;"><p>Modern deep learning is exceptionally good at finding patterns in large datasets. However, when we apply standard neural networks to physical systems (like fluid dynamics, heat transfer, or quantum mechanics), they often struggle. They might predict physically impossible states—like violating the conservation of energy or mass—because they lack prior physical knowledge.</p>
+<p><strong>Physics-Informed Neural Networks (PINNs)</strong> solve this by embedding physical laws, typically represented as partial differential equations (PDEs), directly into the neural network&rsquo;s loss function.</p>
+<hr>
+<h2 id="the-core-concept-physics-in-the-loss-function">The Core Concept: Physics in the Loss Function</h2>
+<p>In a traditional supervised learning setup, we minimize the difference between the network&rsquo;s predictions and some ground truth labels:</p>
+<p>$$\mathcal{L}<em>{\text{data}} = \frac{1}{N} \sum</em>{i=1}^N \left| u_{\text{pred}}(x_i, t_i) - u(x_i, t_i) \right|^2$$</p>
+<p>With PINNs, we introduce a new loss term, $\mathcal{L}_{\text{physics}}$, which measures how well the network&rsquo;s predictions satisfy a known physical differential equation.</p>
+<p>Let&rsquo;s assume we want to solve a simple 1D wave equation:</p>
+<p>$$\frac{\partial^2 u}{\partial t^2} - c^2 \frac{\partial^2 u}{\partial x^2} = 0$$</p>
+<p>Using <strong>Automatic Differentiation (AD)</strong>, we can calculate the exact partial derivatives of the network&rsquo;s output $u_{\text{pred}}(x, t)$ with respect to its inputs $x$ and $t$. We then construct the residual $r(x, t)$:</p>
+<p>$$r(x, t) = \frac{\partial^2 u_{\text{pred}}}{\partial t^2} - c^2 \frac{\partial^2 u_{\text{pred}}}{\partial x^2}$$</p>
+<p>If the network satisfies the wave equation, $r(x, t)$ should be zero everywhere. We enforce this by minimizing the squared residual over a set of collocation points:</p>
+<p>$$\mathcal{L}<em>{\text{physics}} = \frac{1}{M} \sum</em>{j=1}^M \left| r(x_j, t_j) \right|^2$$</p>
+<p>The final loss function is a weighted sum:</p>
+<p>$$\mathcal{L} = \mathcal{L}<em>{\text{data}} + \lambda_1 \mathcal{L}</em>{\text{physics}} + \lambda_2 \mathcal{L}_{\text{boundary}}$$</p>
+<hr>
+<h2 id="why-is-this-a-game-changer">Why is this a Game-Changer?</h2>
+<ol>
+<li><strong>Data Efficiency</strong>: Since the model is constrained by physical laws, it requires significantly less training data to achieve high accuracy.</li>
+<li><strong>Extrapolation</strong>: Standard neural networks generalize poorly outside their training distribution. PINNs generalize much better because the underlying physics remains valid outside the training data region.</li>
+<li><strong>Mesh-Free Solvers</strong>: Traditional PDE solvers (like Finite Element Methods) require complex mesh generation. PINNs are completely mesh-free, adjusting automatically to complex geometries.</li>
+</ol>
+<hr>
+<h2 id="simple-pytorch-implementation-outline">Simple PyTorch Implementation Outline</h2>
+<p>Here is a short code outline demonstrating how to construct a PINN loss in PyTorch:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> torch
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> torch.nn <span style="color:#66d9ef">as</span> nn
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PINN</span>(nn<span style="color:#f92672">.</span>Module):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__init__</span>(self):
+</span></span><span style="display:flex;"><span>        super()<span style="color:#f92672">.</span><span style="color:#a6e22e">__init__</span>()
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>net <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Sequential(
+</span></span><span style="display:flex;"><span>            nn<span style="color:#f92672">.</span>Linear(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">64</span>),
+</span></span><span style="display:flex;"><span>            nn<span style="color:#f92672">.</span>Tanh(),
+</span></span><span style="display:flex;"><span>            nn<span style="color:#f92672">.</span>Linear(<span style="color:#ae81ff">64</span>, <span style="color:#ae81ff">64</span>),
+</span></span><span style="display:flex;"><span>            nn<span style="color:#f92672">.</span>Tanh(),
+</span></span><span style="display:flex;"><span>            nn<span style="color:#f92672">.</span>Linear(<span style="color:#ae81ff">64</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">forward</span>(self, x, t):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Input features: x (position) and t (time)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>net(torch<span style="color:#f92672">.</span>cat([x, t], dim<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Custom loss function incorporating PDE residual</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">pinn_loss</span>(model, x_colloc, t_colloc, c<span style="color:#f92672">=</span><span style="color:#ae81ff">1.0</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Ensure gradients can be computed</span>
+</span></span><span style="display:flex;"><span>    x_colloc<span style="color:#f92672">.</span>requires_grad_(<span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    t_colloc<span style="color:#f92672">.</span>requires_grad_(<span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    u <span style="color:#f92672">=</span> model(x_colloc, t_colloc)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Compute first derivatives</span>
+</span></span><span style="display:flex;"><span>    u_x <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>autograd<span style="color:#f92672">.</span>grad(u<span style="color:#f92672">.</span>sum(), x_colloc, create_graph<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>    u_t <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>autograd<span style="color:#f92672">.</span>grad(u<span style="color:#f92672">.</span>sum(), t_colloc, create_graph<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Compute second derivatives</span>
+</span></span><span style="display:flex;"><span>    u_xx <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>autograd<span style="color:#f92672">.</span>grad(u_x<span style="color:#f92672">.</span>sum(), x_colloc, create_graph<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>    u_tt <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>autograd<span style="color:#f92672">.</span>grad(u_t<span style="color:#f92672">.</span>sum(), t_colloc, create_graph<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># PDE Residual for Wave Equation</span>
+</span></span><span style="display:flex;"><span>    residual <span style="color:#f92672">=</span> u_tt <span style="color:#f92672">-</span> (c<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>) <span style="color:#f92672">*</span> u_xx
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> torch<span style="color:#f92672">.</span>mean(residual<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>)
+</span></span></code></pre></div><p>In future articles, I will write about scaling PINNs to solve 2D Naviers-Stokes equations and modeling chaotic dynamics using Fourier Neural Operators (FNOs).</p>
+</section>
+
+  <footer class="mt-12 flex flex-wrap"><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://lokeshbalasubramanian.github.io/tags/deep-learning"
+      >Deep Learning</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://lokeshbalasubramanian.github.io/tags/physics-informed-ml"
+      >Physics-Informed ML</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://lokeshbalasubramanian.github.io/tags/tutorials"
+      >Tutorials</a
+    ></footer><nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  ><a
+      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
+      href="https://lokeshbalasubramanian.github.io/publications/paper-1/"
+      ><span>Quantum Entanglement in Engineering Physics</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    ></nav></article></main><footer
+  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
+>
+  <div class="mr-auto">&copy;2026
+    <a class="link" href="https://lokeshbalasubramanian.github.io/">Lokesh Balasubramanian</a></div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+</body>
+
+</html>

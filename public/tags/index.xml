@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Tags on Lokesh Balasubramanian</title>
+		<link>https://lokeshbalasubramanian.github.io/tags/</link>
+		<description>Recent content in Tags on Lokesh Balasubramanian</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 25 Jun 2026 10:00:00 +0530</lastBuildDate>
+		
+			<atom:link href="https://lokeshbalasubramanian.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Deep Learning</title>
+				<link>https://lokeshbalasubramanian.github.io/tags/deep-learning/</link>
+				<pubDate>Thu, 25 Jun 2026 10:00:00 +0530</pubDate>
+				<guid>https://lokeshbalasubramanian.github.io/tags/deep-learning/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Physics-Informed ML</title>
+				<link>https://lokeshbalasubramanian.github.io/tags/physics-informed-ml/</link>
+				<pubDate>Thu, 25 Jun 2026 10:00:00 +0530</pubDate>
+				<guid>https://lokeshbalasubramanian.github.io/tags/physics-informed-ml/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Tutorials</title>
+				<link>https://lokeshbalasubramanian.github.io/tags/tutorials/</link>
+				<pubDate>Thu, 25 Jun 2026 10:00:00 +0530</pubDate>
+				<guid>https://lokeshbalasubramanian.github.io/tags/tutorials/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Engineering Physics</title>
+				<link>https://lokeshbalasubramanian.github.io/tags/engineering-physics/</link>
+				<pubDate>Sun, 12 Apr 2026 14:00:00 +0530</pubDate>
+				<guid>https://lokeshbalasubramanian.github.io/tags/engineering-physics/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Entanglement</title>
+				<link>https://lokeshbalasubramanian.github.io/tags/entanglement/</link>
+				<pubDate>Sun, 12 Apr 2026 14:00:00 +0530</pubDate>
+				<guid>https://lokeshbalasubramanian.github.io/tags/entanglement/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Quantum Computing</title>
+				<link>https://lokeshbalasubramanian.github.io/tags/quantum-computing/</link>
+				<pubDate>Sun, 12 Apr 2026 14:00:00 +0530</pubDate>
+				<guid>https://lokeshbalasubramanian.github.io/tags/quantum-computing/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Dynamical Systems</title>
+				<link>https://lokeshbalasubramanian.github.io/tags/dynamical-systems/</link>
+				<pubDate>Sun, 20 Jul 2025 10:00:00 +0530</pubDate>
+				<guid>https://lokeshbalasubramanian.github.io/tags/dynamical-systems/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

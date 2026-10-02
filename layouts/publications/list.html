@@ -1,0 +1,263 @@
+{{- define "main" -}}
+
+<h1 class="mb-6">{{- .Title -}}</h1>
+
+{{- if or site.Params.google_scholar site.Params.arxiv -}}
+<div class="mb-8 text-base opacity-75">
+    You can also find my articles on my
+    {{ if site.Params.google_scholar -}}
+    <a href="{{ site.Params.google_scholar }}" target="_blank" rel="noopener noreferrer" class="text-accent underline font-medium">Google Scholar</a>
+    {{- end }}
+    {{ if and site.Params.google_scholar site.Params.arxiv }} or {{ end }}
+    {{ if site.Params.arxiv -}}
+    <a href="{{ site.Params.arxiv }}" target="_blank" rel="noopener noreferrer" class="text-accent underline font-medium">arXiv</a>
+    {{- end }}
+    profiles.
+</div>
+{{- end -}}
+
+<!-- Collect all unique tags for filtering -->
+{{- $tags := slice -}}
+{{- range .Pages -}}
+  {{- range .Params.tags -}}
+    {{- $tags = $tags | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- $unique_tags := $tags | uniq | sort -}}
+
+<!-- Filter and Search Box -->
+<div class="filter-container">
+    <input type="text" id="pub-search" class="search-input" placeholder="🔍 Search publications by title, venue, author, or keywords..." />
+    
+    <div class="tag-filters">
+        <button class="filter-tag active" data-filter="all">All Topics</button>
+        {{- range $unique_tags -}}
+        <button class="filter-tag" data-filter="{{ . | lower }}">{{ . }}</button>
+        {{- end -}}
+    </div>
+</div>
+
+<div id="publications-wrapper">
+    <!-- Selected Publications Section -->
+    {{- $selected_pubs := where .Pages "Params.selected" "==" true -}}
+    {{- if gt (len $selected_pubs) 0 -}}
+    <div class="pub-group-section" id="group-selected">
+        <h2 class="text-xl font-bold border-b pb-2 mb-4 mt-8 opacity-90">⭐ Selected Publications</h2>
+        <div class="pub-list">
+            {{- range $selected_pubs -}}
+            {{- template "publication-card" . -}}
+            {{- end -}}
+        </div>
+    </div>
+    {{- end -}}
+
+    <!-- All Publications Grouped by Year -->
+    {{- $regular_pubs := where .Pages "Params.selected" "!=" true -}}
+    {{- range ($regular_pubs).GroupByDate "2006" -}}
+    <div class="pub-group-section group-year" id="group-year-{{ .Key }}" data-year="{{ .Key }}">
+        <h2 class="text-xl font-bold border-b pb-2 mb-4 mt-8 opacity-90">{{ .Key }}</h2>
+        <div class="pub-list">
+            {{- range .Pages -}}
+            {{- template "publication-card" . -}}
+            {{- end -}}
+        </div>
+    </div>
+    {{- end -}}
+</div>
+
+<script>
+// Toggle elements
+function toggleDetails(id) {
+    const el = document.getElementById(id);
+    if (el) {
+        el.classList.toggle('hidden');
+    }
+}
+
+// Copy to clipboard
+function copyBibTeX(id) {
+    const codeEl = document.getElementById('code-' + id);
+    const tooltip = document.getElementById('tooltip-' + id);
+    
+    if (codeEl && tooltip) {
+        const text = codeEl.innerText.trim();
+        navigator.clipboard.writeText(text).then(() => {
+            tooltip.classList.add('show');
+            setTimeout(() => {
+                tooltip.classList.remove('show');
+            }, 1800);
+        }).catch(err => {
+            console.error('Failed to copy text: ', err);
+        });
+    }
+}
+
+// Search and Filter Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('pub-search');
+    const filterTags = document.querySelectorAll('.filter-tag');
+    const pubCards = document.querySelectorAll('.publication-card');
+    const pubGroups = document.querySelectorAll('.pub-group-section');
+    
+    let activeTag = 'all';
+    let searchQuery = '';
+
+    function filterPublications() {
+        pubCards.forEach(card => {
+            const cardTags = card.getAttribute('data-tags').split(',');
+            const searchText = card.getAttribute('data-search-text');
+            
+            const matchesTag = (activeTag === 'all') || cardTags.includes(activeTag);
+            const matchesSearch = searchText.includes(searchQuery);
+            
+            if (matchesTag && matchesSearch) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        // Hide group sections that have no visible publications
+        pubGroups.forEach(group => {
+            const visibleCards = group.querySelectorAll('.publication-card[style="display: block;"]');
+            if (visibleCards.length === 0) {
+                group.style.display = 'none';
+            } else {
+                group.style.display = 'block';
+            }
+        });
+    }
+
+    // Search input handler
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            searchQuery = e.target.value.toLowerCase().trim();
+            filterPublications();
+        });
+    }
+
+    // Tag button handler
+    filterTags.forEach(tagBtn => {
+        tagBtn.addEventListener('click', () => {
+            filterTags.forEach(btn => btn.classList.remove('active'));
+            tagBtn.classList.add('active');
+            activeTag = tagBtn.getAttribute('data-filter');
+            filterPublications();
+        });
+    });
+});
+</script>
+
+<style>
+.hidden {
+    display: none !important;
+}
+</style>
+
+{{- end -}}
+
+<!-- Template for Publication Card -->
+{{- define "publication-card" -}}
+{{- $unique_id := md5 .File.Path -}}
+{{- $tags_str := "" -}}
+{{- if .Params.tags -}}
+  {{- $tags_str = delimit .Params.tags " " -}}
+{{- end -}}
+{{- $search_text := lower (print .Title " " .Params.authors " " .Params.publication_venue " " $tags_str) -}}
+<div class="publication-card" 
+     data-tags="{{ if .Params.tags }}{{ delimit .Params.tags `,` | lower }}{{ end }}" 
+     data-search-text="{{ $search_text }}"
+     data-selected="{{ .Params.selected | default false }}">
+    
+    <h3 class="pub-title my-0">
+        <a href="{{ .Params.pdf_url | default .Permalink }}" target="_blank" rel="noopener noreferrer">
+            {{- .Title -}}
+        </a>
+    </h3>
+
+    <div class="pub-authors mt-1">
+        {{- if .Params.authors -}}
+            {{- replace .Params.authors "Lokesh Balasubramanian" "<span class='pub-author-self'>Lokesh Balasubramanian</span>" | safeHTML -}}
+        {{- end -}}
+    </div>
+
+    <div class="pub-venue mt-1">
+        {{- .Params.publication_venue | default "Preprint" -}}
+        {{- if .Date -}}, {{ .Date.Format "2006" }}{{- end -}}
+    </div>
+
+    {{- if .Params.tags -}}
+    <div class="pub-tags">
+        {{- range .Params.tags -}}
+        <span class="pub-tag">{{ . }}</span>
+        {{- end -}}
+    </div>
+    {{- end -}}
+
+    <div class="pub-links">
+        {{- if .Params.pdf_url -}}
+        <a href="{{ .Params.pdf_url }}" class="pub-btn" target="_blank" rel="noopener noreferrer">
+            <svg style="width:14px;height:14px;" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+            PDF
+        </a>
+        {{- end -}}
+
+        {{- if .Params.arxiv_id -}}
+        <a href="https://arxiv.org/abs/{{ .Params.arxiv_id }}" class="pub-btn" target="_blank" rel="noopener noreferrer">
+            <svg style="width:14px;height:14px;" viewBox="0 0 24 24"><path fill="currentColor" d="M19,2H5A2,2 0 0,0 3,4V20A2,2 0 0,0 5,22H19A2,2 0 0,0 21,20V4A2,2 0 0,0 19,2M12,6A3,3 0 0,1 15,9A3,3 0 0,1 12,12A3,3 0 0,1 9,9A3,3 0 0,1 12,6M18,18H6V17C6,15 10,13.9 12,13.9C14,13.9 18,15 18,17V18Z"/></svg>
+            arXiv
+        </a>
+        {{- end -}}
+
+        {{- if .Params.code_url -}}
+        <a href="{{ .Params.code_url }}" class="pub-btn" target="_blank" rel="noopener noreferrer">
+            <svg style="width:14px;height:14px;" viewBox="0 0 24 24"><path fill="currentColor" d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.49,20.14 9.49,19.31C6.71,19.91 6.13,17.96 6.13,17.96C5.67,16.8 5,16.5 5,16.5C4.09,15.88 5.07,15.9 5.07,15.9C6.08,16 6.61,16.94 6.61,16.94C7.5,18.45 8.93,18 9.49,17.77C9.58,17.11 9.85,16.66 10.15,16.4C7.97,16.15 5.68,15.31 5.68,11.56C5.68,10.5 6.06,9.63 6.68,8.95C6.58,8.7 6.25,7.7 6.78,6.38C6.78,6.38 7.6,6.12 9.47,7.38C10.25,7.16 11.08,7.05 11.91,7.05C12.74,7.05 13.57,7.16 14.35,7.38C16.22,6.12 17.03,6.38 17.03,6.38C17.56,7.7 17.24,8.7 17.14,8.95C17.76,9.63 18.14,10.5 18.14,11.56C18.14,15.32 15.84,16.14 13.65,16.39C14,16.7 14.31,17.32 14.31,18.28C14.31,19.65 14.3,20.77 14.3,21C14.3,21.28 14.46,21.59 14.96,21.5C18.92,20.17 21.8,16.42 21.8,12A10,10 0 0,0 12,2Z"/></svg>
+            Code
+        </a>
+        {{- end -}}
+
+        {{- if .Params.project_url -}}
+        <a href="{{ .Params.project_url }}" class="pub-btn" target="_blank" rel="noopener noreferrer">
+            <svg style="width:14px;height:14px;" viewBox="0 0 24 24"><path fill="currentColor" d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4M12,18c-2.76,0-5-2.24-5-5a5,5 0 0,1 5-5a5,5 0 0,1 5,5c0,2.76-2.24,5-5,5Z"/></svg>
+            Website
+        </a>
+        {{- end -}}
+
+        {{- if .Content -}}
+        <button class="pub-btn" onclick="toggleDetails('abs-{{ $unique_id }}')">
+            Abstract
+        </button>
+        {{- end -}}
+
+        {{- if .Params.bibtex -}}
+        <button class="pub-btn" onclick="toggleDetails('bib-{{ $unique_id }}')">
+            BibTeX
+        </button>
+        {{- end -}}
+    </div>
+
+    {{- if .Content -}}
+    <div id="abs-{{ $unique_id }}" class="pub-collapsible hidden">
+        <div class="collapsible-content">
+            <strong>Abstract:</strong><br/>
+            {{- .Content -}}
+        </div>
+    </div>
+    {{- end -}}
+
+    {{- if .Params.bibtex -}}
+    <div id="bib-{{ $unique_id }}" class="pub-collapsible hidden">
+        <div class="copy-wrapper">
+            <span class="copy-tooltip" id="tooltip-{{ $unique_id }}">Copied!</span>
+            <button class="copy-btn" onclick="copyBibTeX('{{ $unique_id }}')">
+                <svg style="width:12px;height:12px;" viewBox="0 0 24 24"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" /></svg>
+                Copy
+            </button>
+        </div>
+        <div class="collapsible-content">
+            <pre class="bibtex-pre"><code id="code-{{ $unique_id }}">{{- .Params.bibtex -}}</code></pre>
+        </div>
+    </div>
+    {{- end -}}
+</div>
+{{- end -}}

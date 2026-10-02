@@ -1,0 +1,46 @@
+baseURL = 'https://lokeshbalasubramanian.github.io/'
+languageCode = 'en-us'
+title = 'Lokesh Balasubramanian'
+theme = 'hugo-paper'
+
+[params]
+  # Theme color: 'linen' is the classic paper look, or leave empty for default
+  color = 'linen'
+  
+  # Social links (Username only for Twitter/Github)
+  twitter = 'lokesh319486066'
+  github = 'lokeshbalasubramanian'
+  email = 'ph1221858@iitd.ac.in'
+  # hugo-paper supports these by default. For LinkedIn, it might need a custom layout or it might be in params.
+  linkedin = 'lokeshbalasubramanian'
+  google_scholar = 'https://scholar.google.com'
+  arxiv = 'https://arxiv.org'
+
+  # Profile info
+  name = 'Lokesh Balasubramanian'
+  bio = 'Incoming M.S. in Data Science @ NYU | B.Tech. @ IIT Delhi'
+
+  avatar = '/images/profile_pic.png'
+  mainSections = ['posts', 'publications']
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts/"
+    weight = 10
+  [[menu.main]]
+    identifier = "publications"
+    name = "Publications"
+    url = "/publications/"
+    weight = 20
+  [[menu.main]]
+    identifier = "cv"
+    name = "CV"
+    url = "/cv/"
+    weight = 15
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
