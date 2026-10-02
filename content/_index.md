@@ -1,51 +1,36 @@
 ---
 title: "About Me"
-date: 2026-07-05T12:00:00+05:30
+date: 2026-08-25T12:00:00+05:30
 draft: false
 ---
 
-I am an incoming **M.S. in Data Science** student at the **Center for Data Science, New York University (NYU)** (2026–2028). I recently graduated with a B.Tech. in **Engineering Physics** from the **Indian Institute of Technology (IIT) Delhi** (2022–2026).
-
-My research interests lie at the intersection of **Physics and Machine Learning**, with a specific focus on using deep learning to model complex dynamical systems, quantum master equations, and physics-informed neural networks (PINNs). I have worked on research projects with Yardi School of AI (IIT Delhi) and the University of Oxford & CNRS-IAP (Paris), and completed an engineering internship at Oracle Cloud Infrastructure (OCI).
+I am an incoming **M.S. in Data Science** student at the **Center for Data Science, New York University (NYU)** (2026–2028). I graduated with a B.Tech. in **Engineering Physics** from the **Indian Institute of Technology (IIT) Delhi** (2022–2026).
 
 ---
 
-### 🧬 Research Interests
-*   **Physics-Informed Machine Learning (PIML)**: Embedding physical constraints, symmetries, and differential equations into neural network architectures.
-*   **Quantum Machine Learning**: Using machine learning to optimize quantum control, study quantum states, and speed up quantum simulations.
-*   **Dynamical Systems & Chaos**: Modeling and predicting chaotic physical systems using deep neural networks (LSTMs, Neural ODEs, and Fourier Neural Operators).
+### Research & Focus Areas
+
+My work lies at the intersection of Machine Learning and Physics, with experience across statistical physics of LLM reasoning, symbolic regression for cosmology, and deep learning for high-energy physics.
+
+* **Statistical Physics of Reasoning in LLMs**: Investigating hidden-state trajectories in DeepSeek-R1 models as dynamical systems to analyze latent reasoning regimes and model performance on IIT Delhi's HPC cluster.
+* **Symbolic Regression for Cosmology**: Developing scalable symbolic optimization pipelines using PyOperon for Halo Mass Functions (SYREN-HMF project) in collaboration with Oxford & CNRS-IAP.
+* **Machine Learning for High-Energy Physics**: Developing Monte Carlo simulation pipelines and benchmarking ParticleNet, Particle Transformer, and FROCC architectures for jet tagging in LHC collisions.
+* **Cloud Infrastructure**: Re-architected Reverse Connection Endpoint (RCE) workflows into parallel, fault-tolerant systems during an internship at Oracle Cloud Infrastructure (OCI).
 
 ---
 
-### 📢 News & Updates
+### Education & Experience Summary
 
-<div class="news-timeline">
-    <div class="news-item">
-        <div class="news-marker"></div>
-        <div class="news-date">June 2026</div>
-        <div class="news-content">
-            Finished summer research internship at the Quantum ML Lab. Developed a novel solver for quantum master equations.
-        </div>
-    </div>
-    <div class="news-item">
-        <div class="news-marker"></div>
-        <div class="news-date">April 2026</div>
-        <div class="news-content">
-            Our paper <i>"Quantum Entanglement in Engineering Physics"</i> was accepted for publication at the <b>Journal of Physics D: Applied Physics</b>!
-        </div>
-    </div>
-    <div class="news-item">
-        <div class="news-marker"></div>
-        <div class="news-date">January 2026</div>
-        <div class="news-content">
-            Began working on my undergraduate thesis on "Deep Learning Solvers for Quantum Many-Body Systems" advised by Dr. Prof. XYZ.
-        </div>
-    </div>
-    <div class="news-item">
-        <div class="news-marker"></div>
-        <div class="news-date">September 2025</div>
-        <div class="news-content">
-            Awarded the IIT Delhi Undergraduate Research Fellowship for project on PINNs.
-        </div>
-    </div>
-</div>
+* **New York University (NYU)**: M.S. in Data Science (2026 – 2028)
+* **Indian Institute of Technology (IIT) Delhi**: B.Tech. in Engineering Physics (2022 – 2026), GPA: 8.3 / 10.0
+* **Yardi School of AI, IIT Delhi**: Undergraduate Researcher (Advisor: Prof. Sumeet Agarwal)
+* **University of Oxford & CNRS–IAP, Paris**: Research Intern (Advisor: Dr. Deaglan Bartlett)
+* **Department of Physics & CSE, IIT Delhi**: Undergraduate Researcher (Advisors: Prof. Abhishek Iyer and Prof. Srikanta Bedathur)
+* **Oracle Cloud Infrastructure (OCI)**: Member of Technical Staff Intern (May 2025 – Jul 2025)
+
+---
+
+### Achievements & Teaching
+
+* **Teaching**: APG Tutor for Quantum Mechanics & Solid State Physics; BSW Student Mentor at IIT Delhi.
+* **Achievements**: JEE Advanced 2022 (Top 0.8% nationwide); Regional Mathematical Olympiad (RMO 2019) Qualifier.

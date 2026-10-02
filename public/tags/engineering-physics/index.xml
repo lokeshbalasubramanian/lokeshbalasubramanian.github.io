@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Engineering Physics on Lokesh Balasubramanian</title>
-		<link>https://lokeshbalasubramanian.github.io/tags/engineering-physics/</link>
+		<link>http://localhost:1313/tags/engineering-physics/</link>
 		<description>Recent content in Engineering Physics on Lokesh Balasubramanian</description>
 		<generator>Hugo</generator>
 		<language>en-us</language>
@@ -12,12 +12,12 @@
 		
 			<lastBuildDate>Sun, 12 Apr 2026 14:00:00 +0530</lastBuildDate>
 		
-			<atom:link href="https://lokeshbalasubramanian.github.io/tags/engineering-physics/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/engineering-physics/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Quantum Entanglement in Engineering Physics</title>
-				<link>https://lokeshbalasubramanian.github.io/publications/paper-1/</link>
+				<link>http://localhost:1313/publications/paper-1/</link>
 				<pubDate>Sun, 12 Apr 2026 14:00:00 +0530</pubDate>
-				<guid>https://lokeshbalasubramanian.github.io/publications/paper-1/</guid>
+				<guid>http://localhost:1313/publications/paper-1/</guid>
 				<description>&lt;p&gt;We investigate the practical realization and stability of macroscopic quantum entanglement in engineering physics applications. Specifically, we explore how superconducting circuits and quantum dots can maintain coherence in ambient thermal environments by using tailored magnetic confinement.&lt;/p&gt;&#xA;&lt;p&gt;Our results demonstrate a 40% increase in coherence time compared to traditional control schemes, opening new possibilities for high-temperature quantum sensors and robust qubits. We provide full simulation source code in our GitHub repository.&lt;/p&gt;</description>
 			</item>
 	</channel>

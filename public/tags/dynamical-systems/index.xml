@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Dynamical Systems on Lokesh Balasubramanian</title>
-		<link>https://lokeshbalasubramanian.github.io/tags/dynamical-systems/</link>
+		<link>http://localhost:1313/tags/dynamical-systems/</link>
 		<description>Recent content in Dynamical Systems on Lokesh Balasubramanian</description>
 		<generator>Hugo</generator>
 		<language>en-us</language>
@@ -12,12 +12,12 @@
 		
 			<lastBuildDate>Sun, 20 Jul 2025 10:00:00 +0530</lastBuildDate>
 		
-			<atom:link href="https://lokeshbalasubramanian.github.io/tags/dynamical-systems/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/dynamical-systems/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Physics-Informed Neural Networks for Chaotic Dynamical Systems</title>
-				<link>https://lokeshbalasubramanian.github.io/publications/paper-2/</link>
+				<link>http://localhost:1313/publications/paper-2/</link>
 				<pubDate>Sun, 20 Jul 2025 10:00:00 +0530</pubDate>
-				<guid>https://lokeshbalasubramanian.github.io/publications/paper-2/</guid>
+				<guid>http://localhost:1313/publications/paper-2/</guid>
 				<description>&lt;p&gt;Solving chaotic systems like the double pendulum or Lorenz attractor using classical numerical methods can be computationally prohibitive over long integration times. We propose a custom Loss-Regularized Physics-Informed Neural Network (PINN) that embeds Hamiltonian conservation properties into the loss function.&lt;/p&gt;&#xA;&lt;p&gt;Our framework significantly reduces cumulative integration errors and guarantees long-term energy conservation within 1e-4 tolerance, outperforming standard Runge-Kutta-4 baselines in highly chaotic regimes.&lt;/p&gt;</description>
 			</item>
 	</channel>

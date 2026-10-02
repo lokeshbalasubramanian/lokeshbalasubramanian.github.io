@@ -20,12 +20,5 @@
 				<guid>https://lokeshbalasubramanian.github.io/posts/first-post/</guid>
 				<description>A gentle introduction to embedding physical laws and differential equations directly into deep learning models.</description>
 			</item>
-			<item>
-				<title>Physics-Informed Neural Networks for Chaotic Dynamical Systems</title>
-				<link>https://lokeshbalasubramanian.github.io/publications/paper-2/</link>
-				<pubDate>Sun, 20 Jul 2025 10:00:00 +0530</pubDate>
-				<guid>https://lokeshbalasubramanian.github.io/publications/paper-2/</guid>
-				<description>&lt;p&gt;Solving chaotic systems like the double pendulum or Lorenz attractor using classical numerical methods can be computationally prohibitive over long integration times. We propose a custom Loss-Regularized Physics-Informed Neural Network (PINN) that embeds Hamiltonian conservation properties into the loss function.&lt;/p&gt;&#xA;&lt;p&gt;Our framework significantly reduces cumulative integration errors and guarantees long-term energy conservation within 1e-4 tolerance, outperforming standard Runge-Kutta-4 baselines in highly chaotic regimes.&lt;/p&gt;</description>
-			</item>
 	</channel>
 </rss>

@@ -10,15 +10,15 @@
 		
 		
 		
-			<lastBuildDate>Sun, 05 Jul 2026 00:00:00 +0000</lastBuildDate>
+			<lastBuildDate>Tue, 25 Aug 2026 00:00:00 +0000</lastBuildDate>
 		
 			<atom:link href="https://lokeshbalasubramanian.github.io/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Curriculum Vitae</title>
 				<link>https://lokeshbalasubramanian.github.io/cv/</link>
-				<pubDate>Sun, 05 Jul 2026 00:00:00 +0000</pubDate>
+				<pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
 				<guid>https://lokeshbalasubramanian.github.io/cv/</guid>
-				<description>&lt;h2 id=&#34;education&#34;&gt;Education&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;New York University, Center for Data Science&lt;/strong&gt;&lt;br&gt;&#xA;&lt;em&gt;Master of Science (M.S.) in Data Science&lt;/em&gt;&lt;br&gt;&#xA;&lt;em&gt;2026 – 2028 (Incoming)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Indian Institute of Technology (IIT) Delhi&lt;/strong&gt;&lt;br&gt;&#xA;&lt;em&gt;Bachelor of Technology (B.Tech.) in Engineering Physics&lt;/em&gt;&lt;br&gt;&#xA;&lt;em&gt;2022 – 2026&lt;/em&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cumulative GPA:&lt;/strong&gt; 8.38 / 10.0&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Specialization:&lt;/strong&gt; Theoretical &amp;amp; Computational Physics (Specialization GPA: 9.73 / 10.0)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Selected Coursework:&lt;/strong&gt; Machine Learning, Reinforcement Learning, Independent Study in AI, Linear Algebra, Probability &amp;amp; Statistics, Numerical &amp;amp; Computational Methods, Signals &amp;amp; Systems, Computational Physics&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;research-experience&#34;&gt;Research Experience&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Yardi School of Artificial Intelligence, IIT Delhi&lt;/strong&gt;&lt;br&gt;&#xA;&lt;em&gt;Undergraduate Researcher (Advisor: Prof. Sumeet Agarwal)&lt;/em&gt;&lt;br&gt;&#xA;&lt;em&gt;Aug 2025 – Apr 2026&lt;/em&gt;&lt;/p&gt;</description>
+				<description>&lt;p&gt;&lt;a href=&#34;https://lokeshbalasubramanian.github.io/resume.pdf&#34;&gt;Download Full CV (PDF)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;education&#34;&gt;Education&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;New York University, Center for Data Science&lt;/strong&gt;&lt;br&gt;&#xA;&lt;em&gt;Master of Science (M.S.) in Data Science&lt;/em&gt;&lt;br&gt;&#xA;&lt;em&gt;2026 – 2028 (Incoming)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Indian Institute of Technology (IIT) Delhi&lt;/strong&gt;&lt;br&gt;&#xA;&lt;em&gt;Bachelor of Technology (B.Tech.) in Engineering Physics&lt;/em&gt;&lt;br&gt;&#xA;&lt;em&gt;2022 – 2026&lt;/em&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cumulative GPA:&lt;/strong&gt; 8.3 / 10.0&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Selected Coursework:&lt;/strong&gt; Machine Learning, Reinforcement Learning, Independent Study in AI, Linear Algebra, Probability &amp;amp; Statistics, Numerical &amp;amp; Computational Methods, Signals &amp;amp; Systems, Computational Physics, Statistical Physics&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;research-experience&#34;&gt;Research Experience&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Yardi School of Artificial Intelligence, IIT Delhi&lt;/strong&gt;&lt;br&gt;&#xA;&lt;em&gt;Undergraduate Researcher (Advisor: Prof. Sumeet Agarwal)&lt;/em&gt;&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>An Intuitive Guide to Physics-Informed Neural Networks (PINNs)</title>
@@ -26,20 +26,6 @@
 				<pubDate>Thu, 25 Jun 2026 10:00:00 +0530</pubDate>
 				<guid>https://lokeshbalasubramanian.github.io/posts/first-post/</guid>
 				<description>A gentle introduction to embedding physical laws and differential equations directly into deep learning models.</description>
-			</item>
-			<item>
-				<title>Quantum Entanglement in Engineering Physics</title>
-				<link>https://lokeshbalasubramanian.github.io/publications/paper-1/</link>
-				<pubDate>Sun, 12 Apr 2026 14:00:00 +0530</pubDate>
-				<guid>https://lokeshbalasubramanian.github.io/publications/paper-1/</guid>
-				<description>&lt;p&gt;We investigate the practical realization and stability of macroscopic quantum entanglement in engineering physics applications. Specifically, we explore how superconducting circuits and quantum dots can maintain coherence in ambient thermal environments by using tailored magnetic confinement.&lt;/p&gt;&#xA;&lt;p&gt;Our results demonstrate a 40% increase in coherence time compared to traditional control schemes, opening new possibilities for high-temperature quantum sensors and robust qubits. We provide full simulation source code in our GitHub repository.&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>Physics-Informed Neural Networks for Chaotic Dynamical Systems</title>
-				<link>https://lokeshbalasubramanian.github.io/publications/paper-2/</link>
-				<pubDate>Sun, 20 Jul 2025 10:00:00 +0530</pubDate>
-				<guid>https://lokeshbalasubramanian.github.io/publications/paper-2/</guid>
-				<description>&lt;p&gt;Solving chaotic systems like the double pendulum or Lorenz attractor using classical numerical methods can be computationally prohibitive over long integration times. We propose a custom Loss-Regularized Physics-Informed Neural Network (PINN) that embeds Hamiltonian conservation properties into the loss function.&lt;/p&gt;&#xA;&lt;p&gt;Our framework significantly reduces cumulative integration errors and guarantees long-term energy conservation within 1e-4 tolerance, outperforming standard Runge-Kutta-4 baselines in highly chaotic regimes.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>About Me</title>
