@@ -76,4 +76,4 @@ layout: "cv"
 
 ---
 
-[Download Full CV (PDF)](/cv.pdf)
+[Download Full CV (PDF)](/resume.pdf)
