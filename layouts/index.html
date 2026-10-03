@@ -40,19 +40,15 @@
             
             {{- if site.Params.email -}}
             <a href="mailto:{{ site.Params.email }}" class="social-btn" aria-label="Email" title="Email">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             </a>
             {{- end -}}
-            
-            <a href="/resume.pdf" class="social-btn" target="_blank" aria-label="CV" title="CV">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-            </a>
         </div>
     </div>
     {{- end -}}
 </div>
 
-<div class="prose dark:prose-invert mt-8" style="max-width: 100%; font-size: 1.1rem; line-height: 1.7;">
+<div class="prose dark:prose-invert mt-12 sm:mt-16" style="max-width: 100%; font-size: 1.1rem; line-height: 1.7;">
     {{ .Content }}
 </div>
 
