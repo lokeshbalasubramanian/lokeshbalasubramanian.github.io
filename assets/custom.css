@@ -413,3 +413,43 @@ html.dark .collapsible-content {
   opacity: 1;
   transform: translateY(-4px);
 }
+
+/* Interest List (inspired by academic homepages) */
+.interest-list {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+  margin-top: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.interest-list li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.interest-list strong {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+/* Background Section & Cards */
+.bg-card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  margin: 1.25rem 0;
+}
+
+.bg-item {
+  padding: 0.875rem 1.125rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  transition: all 0.2s ease;
+}
+
+.bg-item:hover {
+  border-color: var(--accent-color);
+  transform: translateX(2px);
+}
+

@@ -1,9 +1,6 @@
 <header class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center">
   <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
     <a class="-translate-y-[1px] text-2xl font-medium" href="{{- `` | absURL -}}">{{ site.Title }}</a>
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer {{ if site.Params.monoDarkIcon }}[background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert{{ else }}[background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)]{{ end }} dark:[background-position:right]"
-      role="button" aria-label="Dark"></div>
   </div>
 
   <div
@@ -49,9 +46,13 @@
     });
 
     // manual switch
-    const btnDark = document.querySelector('.btn-dark');
-    btnDark.addEventListener('click', () => {
-      setDark(localStorage.getItem('dark') !== 'true');
+    document.addEventListener('DOMContentLoaded', () => {
+      const btnDark = document.querySelector('.btn-dark');
+      if (btnDark) {
+        btnDark.addEventListener('click', () => {
+          setDark(localStorage.getItem('dark') !== 'true');
+        });
+      }
     });
   </script>
 
@@ -59,11 +60,18 @@
     class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none">
     {{- $url := .RelPermalink -}}<!---->
     {{- with site.Menus.main -}}
-    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse">
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-8 rtl:space-x-reverse">
       {{- range . -}}
-      <a class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal" href="{{- .URL -}}">{{- .Name
-        -}}</a>
+      <a class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal" href="{{- .URL -}}">{{- .Name -}}</a>
       {{- end -}}
+      <button class="btn-dark p-2 text-neutral-600 hover:text-black dark:text-neutral-300 dark:hover:text-white transition-colors cursor-pointer flex items-center justify-center self-center" role="button" aria-label="Toggle Dark Mode">
+        <svg class="w-5 h-5 hidden dark:block fill-current" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z" clip-rule="evenodd"/>
+        </svg>
+        <svg class="w-5 h-5 block dark:hidden fill-current" viewBox="0 0 20 20">
+          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+        </svg>
+      </button>
     </nav>
     {{- end -}}<!---->
   </div>

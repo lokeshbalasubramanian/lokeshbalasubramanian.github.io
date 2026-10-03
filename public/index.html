@@ -27,7 +27,7 @@
     name="description"
     content="A personal blog"
   />
-  <meta name="author" content="Lokesh Balasubramanian" /><link rel="preload stylesheet" as="style" href="https://lokeshbalasubramanian.github.io/main.min.a65a18675ecbe44231bb502b114217ce2abb4c5869f3ff4ecac8228df5e89d80.css" integrity="sha256-ploYZ17L5EIxu1ArEUIXziq7TFhp8/9OysgijfXonYA=" />
+  <meta name="author" content="Lokesh Balasubramanian" /><link rel="preload stylesheet" as="style" href="https://lokeshbalasubramanian.github.io/main.min.702c6c9bba3ee959f29d78734ae9131e51d08f72f27cce5354f484b870e34680.css" integrity="sha256-cCxsm7o&#43;6VnynXhzSukTHlHQj3LyfM5TVPSEuHDjRoA=" />
 
   
   <link rel="preload" as="image" href="https://lokeshbalasubramanian.github.io/theme.png" />
@@ -50,22 +50,22 @@
 
   <meta name="generator" content="Hugo 0.163.3">
 	<meta itemprop="name" content="About Me">
-	<meta itemprop="description" content="Incoming M.S. in Data Science student at the Center for Data Science, New York University (NYU) (2026–2028). Graduate in Engineering Physics from the Indian Institute of Technology (IIT) Delhi (2022–2026).
-My work focuses on machine learning applications in physical systems, statistical mechanics of LLM reasoning, symbolic regression, and cloud infrastructure.">
+	<meta itemprop="description" content="Hi! I’m Lokesh, an incoming M.S. in Data Science student at New York University (NYU CDS) and a recent Engineering Physics graduate from the Indian Institute of Technology (IIT) Delhi.
+I’m interested in machine learning, natural language processing, and AI for Science. My experiences in research and industry have allowed me to work on problems spanning large language models, scientific machine learning, and cloud infrastructure—shaping the way I think about building intelligent systems.">
 	<meta itemprop="datePublished" content="2026-08-25T12:00:00+05:30">
 	<meta itemprop="dateModified" content="2026-08-25T12:00:00+05:30">
-	<meta itemprop="wordCount" content="50"><meta property="og:url" content="https://lokeshbalasubramanian.github.io/">
+	<meta itemprop="wordCount" content="234"><meta property="og:url" content="https://lokeshbalasubramanian.github.io/">
 	<meta property="og:site_name" content="Lokesh Balasubramanian">
 	<meta property="og:title" content="About Me">
-	<meta property="og:description" content="Incoming M.S. in Data Science student at the Center for Data Science, New York University (NYU) (2026–2028). Graduate in Engineering Physics from the Indian Institute of Technology (IIT) Delhi (2022–2026).
-My work focuses on machine learning applications in physical systems, statistical mechanics of LLM reasoning, symbolic regression, and cloud infrastructure.">
+	<meta property="og:description" content="Hi! I’m Lokesh, an incoming M.S. in Data Science student at New York University (NYU CDS) and a recent Engineering Physics graduate from the Indian Institute of Technology (IIT) Delhi.
+I’m interested in machine learning, natural language processing, and AI for Science. My experiences in research and industry have allowed me to work on problems spanning large language models, scientific machine learning, and cloud infrastructure—shaping the way I think about building intelligent systems.">
 	<meta property="og:locale" content="en_us">
 	<meta property="og:type" content="website">
 
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:title" content="About Me">
-	<meta name="twitter:description" content="Incoming M.S. in Data Science student at the Center for Data Science, New York University (NYU) (2026–2028). Graduate in Engineering Physics from the Indian Institute of Technology (IIT) Delhi (2022–2026).
-My work focuses on machine learning applications in physical systems, statistical mechanics of LLM reasoning, symbolic regression, and cloud infrastructure.">
+	<meta name="twitter:description" content="Hi! I’m Lokesh, an incoming M.S. in Data Science student at New York University (NYU CDS) and a recent Engineering Physics graduate from the Indian Institute of Technology (IIT) Delhi.
+I’m interested in machine learning, natural language processing, and AI for Science. My experiences in research and industry have allowed me to work on problems spanning large language models, scientific machine learning, and cloud infrastructure—shaping the way I think about building intelligent systems.">
 <link
     rel="alternate"
     type="application/rss&#43;xml"
@@ -78,9 +78,6 @@ My work focuses on machine learning applications in physical systems, statistica
   class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"><header class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center">
   <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
     <a class="-translate-y-[1px] text-2xl font-medium" href="https://lokeshbalasubramanian.github.io/">Lokesh Balasubramanian</a>
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
-      role="button" aria-label="Dark"></div>
   </div>
 
   <div
@@ -124,14 +121,26 @@ My work focuses on machine learning applications in physical systems, statistica
     });
 
     
-    const btnDark = document.querySelector('.btn-dark');
-    btnDark.addEventListener('click', () => {
-      setDark(localStorage.getItem('dark') !== 'true');
+    document.addEventListener('DOMContentLoaded', () => {
+      const btnDark = document.querySelector('.btn-dark');
+      if (btnDark) {
+        btnDark.addEventListener('click', () => {
+          setDark(localStorage.getItem('dark') !== 'true');
+        });
+      }
     });
   </script>
 
   <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"><nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"><a class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal" href="/posts/">Posts</a><a class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal" href="/resume.pdf">CV</a></nav>
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"><nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-8 rtl:space-x-reverse"><a class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal" href="/posts/">Posts</a><a class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal" href="/resume.pdf">CV</a><button class="btn-dark p-2 text-neutral-600 hover:text-black dark:text-neutral-300 dark:hover:text-white transition-colors cursor-pointer flex items-center justify-center self-center" role="button" aria-label="Toggle Dark Mode">
+        <svg class="w-5 h-5 hidden dark:block fill-current" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z" clip-rule="evenodd"/>
+        </svg>
+        <svg class="w-5 h-5 block dark:hidden fill-current" viewBox="0 0 20 20">
+          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+        </svg>
+      </button>
+    </nav>
   </div>
 </header><main
     class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"><div class="profile-container not-prose"><div class="profile-avatar-wrapper">
@@ -140,17 +149,55 @@ My work focuses on machine learning applications in physical systems, statistica
         <h1 class="my-0 text-3xl font-bold tracking-tight text-black dark:text-white">Lokesh Balasubramanian</h1>
         <p class="mt-2 mb-0 text-lg font-medium opacity-85 text-accent">Incoming M.S. in Data Science @ NYU | B.Tech. @ IIT Delhi</p>
         
-        <div class="mt-3 flex flex-wrap items-center gap-2 text-sm font-medium opacity-90"><a href="https://github.com/lokeshbalasubramanian" class="hover:underline text-accent" target="_blank" rel="noopener noreferrer">GitHub</a><span class="opacity-40">•</span>
-            <a href="https://linkedin.com/in/lokeshbalasubramanian" class="hover:underline text-accent" target="_blank" rel="noopener noreferrer">LinkedIn</a><span class="opacity-40">•</span>
-            <a href="https://x.com/lokeshvar04" class="hover:underline text-accent" target="_blank" rel="noopener noreferrer">X / Twitter</a><span class="opacity-40">•</span>
-            <a href="mailto:lvb5553@nyu.edu" class="hover:underline text-accent">Email</a><span class="opacity-40">•</span>
-            <a href="/resume.pdf" class="hover:underline text-accent" target="_blank">CV</a>
+        <div class="social-links"><a href="https://github.com/lokeshbalasubramanian" class="social-btn" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
+            </a><a href="https://linkedin.com/in/lokeshbalasubramanian" class="social-btn" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                LinkedIn
+            </a><a href="https://x.com/lokeshvar04" class="social-btn" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                X / Twitter
+            </a><a href="mailto:lvb5553@nyu.edu" class="social-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                Email
+            </a><a href="/resume.pdf" class="social-btn" target="_blank">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                CV
+            </a>
         </div>
     </div></div>
 
 <div class="prose dark:prose-invert mt-8" style="max-width: 100%; font-size: 1.1rem; line-height: 1.7;">
-    <p>Incoming M.S. in Data Science student at the <strong>Center for Data Science, New York University (NYU)</strong> (2026–2028). Graduate in <strong>Engineering Physics</strong> from the <strong>Indian Institute of Technology (IIT) Delhi</strong> (2022–2026).</p>
-<p>My work focuses on machine learning applications in physical systems, statistical mechanics of LLM reasoning, symbolic regression, and cloud infrastructure.</p>
+    <p>Hi! I&rsquo;m Lokesh, an incoming M.S. in Data Science student at <strong>New York University (NYU CDS)</strong> and a recent <strong>Engineering Physics</strong> graduate from the <strong>Indian Institute of Technology (IIT) Delhi</strong>.</p>
+<p>I&rsquo;m interested in <strong>machine learning</strong>, <strong>natural language processing</strong>, and <strong>AI for Science</strong>. My experiences in research and industry have allowed me to work on problems spanning large language models, scientific machine learning, and cloud infrastructure—shaping the way I think about building intelligent systems.</p>
+<hr>
+<h3 id="research-interests">Research Interests</h3>
+<ul class="interest-list">
+  <li><strong>Large Language Models & Reasoning</strong>: Investigating the statistical mechanics of LLM reasoning, contextual decision-making, and knowledge representation in foundation models.</li>
+  <li><strong>AI for Science & Physical Systems</strong>: Applying deep learning, symbolic regression, and physics-informed ML to model physical dynamics and complex scientific data.</li>
+  <li><strong>Cloud Infrastructure & Scalable Systems</strong>: Designing efficient, robust cloud infrastructure and high-performance ML pipelines for intelligent system deployment.</li>
+</ul>
+<hr>
+<h3 id="background">Background</h3>
+<div class="bg-card-container">
+  <div class="bg-item">
+    <div class="font-semibold text-base text-black dark:text-white">New York University (NYU)</div>
+    <div class="text-sm opacity-85">Incoming M.S. in Data Science — Center for Data Science (CDS) <span class="text-xs opacity-60 float-right">2026 – Present</span></div>
+  </div>
+  <div class="bg-item">
+    <div class="font-semibold text-base text-black dark:text-white">Indian Institute of Technology (IIT) Delhi</div>
+    <div class="text-sm opacity-85">B.Tech. in Engineering Physics <span class="text-xs opacity-60 float-right">2022 – 2026</span></div>
+    <div class="text-xs opacity-75 mt-1">Focus on Machine Learning, Statistical Physics, and Scientific Computing</div>
+  </div>
+  <div class="bg-item">
+    <div class="font-semibold text-base text-black dark:text-white">Research & Industry Experience</div>
+    <div class="text-sm opacity-85">Work spanning Large Language Models (LLMs), Scientific Machine Learning (SciML), and Cloud Infrastructure.</div>
+  </div>
+</div>
+<hr>
+<h3 id="connect">Connect</h3>
+<p>Outside of research, I genuinely enjoy exchanging ideas, discussing interesting papers, and meeting people who are excited about machine learning and science. Whether it&rsquo;s collaborating on research, exploring new ideas, or simply having a good conversation, I&rsquo;d love to connect!</p>
 
 </div></main><footer
   class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
