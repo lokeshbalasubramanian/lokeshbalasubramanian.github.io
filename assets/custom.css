@@ -102,6 +102,15 @@ html:not(.dark) .theme-icon-moon {
   border-bottom: 1px solid var(--border-color);
 }
 
+.profile-bio {
+  color: #57068c !important;
+  font-weight: 500;
+}
+
+html.dark .profile-bio {
+  color: #a855f7 !important;
+}
+
 @media (max-width: 640px) {
   .profile-container {
     flex-direction: column;
