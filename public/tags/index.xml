@@ -10,28 +10,14 @@
 		
 		
 		
-			<lastBuildDate>Thu, 25 Jun 2026 10:00:00 +0530</lastBuildDate>
+			<lastBuildDate>Fri, 02 Oct 2026 12:00:00 +0530</lastBuildDate>
 		
 			<atom:link href="https://lokeshbalasubramanian.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
 			<item>
-				<title>Deep Learning</title>
-				<link>https://lokeshbalasubramanian.github.io/tags/deep-learning/</link>
-				<pubDate>Thu, 25 Jun 2026 10:00:00 +0530</pubDate>
-				<guid>https://lokeshbalasubramanian.github.io/tags/deep-learning/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Physics-Informed ML</title>
-				<link>https://lokeshbalasubramanian.github.io/tags/physics-informed-ml/</link>
-				<pubDate>Thu, 25 Jun 2026 10:00:00 +0530</pubDate>
-				<guid>https://lokeshbalasubramanian.github.io/tags/physics-informed-ml/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Tutorials</title>
-				<link>https://lokeshbalasubramanian.github.io/tags/tutorials/</link>
-				<pubDate>Thu, 25 Jun 2026 10:00:00 +0530</pubDate>
-				<guid>https://lokeshbalasubramanian.github.io/tags/tutorials/</guid>
+				<title>General</title>
+				<link>https://lokeshbalasubramanian.github.io/tags/general/</link>
+				<pubDate>Fri, 02 Oct 2026 12:00:00 +0530</pubDate>
+				<guid>https://lokeshbalasubramanian.github.io/tags/general/</guid>
 				<description></description>
 			</item>
 	</channel>

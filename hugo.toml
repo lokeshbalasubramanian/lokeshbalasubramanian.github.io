@@ -4,14 +4,14 @@ title = 'Lokesh Balasubramanian'
 theme = 'hugo-paper'
 
 [params]
-  # Theme color: 'linen' is the classic paper look, or leave empty for default
+  # Theme color: 'linen' is the classic paper look
   color = 'linen'
   
   # Social links
   twitter = 'lokeshvar04'
   github = 'lokeshbalasubramanian'
   email = 'lvb5553@nyu.edu'
-  linkedin = 'lokesh-balasubramanian'
+  linkedin = 'lokeshbalasubramanian'
 
   # Profile info
   name = 'Lokesh Balasubramanian'
@@ -29,7 +29,7 @@ theme = 'hugo-paper'
   [[menu.main]]
     identifier = "cv"
     name = "CV"
-    url = "/cv/"
+    url = "/resume.pdf"
     weight = 20
 
 [markup]
