@@ -18,8 +18,6 @@ theme = 'hugo-paper'
   bio = 'Incoming M.S. in Data Science @ NYU | B.Tech. @ IIT Delhi'
 
   avatar = '/images/profile_pic.png'
-  favicon = '/favicon.png'
-  appleTouchIcon = '/favicon.png'
   mainSections = ['posts']
 
 [menu]
