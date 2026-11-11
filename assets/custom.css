@@ -1,3 +1,19 @@
+:root {
+  --accent-color: #4f46e5; /* Indigo */
+  --accent-hover: #4338ca;
+  --bg-card: #ffffff;
+  --border-color: rgba(0, 0, 0, 0.08);
+  --timeline-line: #e2e8f0;
+}
+
+html.dark {
+  --accent-color: #818cf8; /* Light indigo */
+  --accent-hover: #6366f1;
+  --bg-card: #1e1e24;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --timeline-line: #334155;
+}
+
 /* Site Header Layout */
 .site-header {
   display: flex !important;
@@ -288,6 +304,55 @@ html.dark .profile-avatar-wrapper {
   color: #ffffff;
 }
 
+/* Academic-style Publications (AcademicPages format) */
+.publications-page {
+  width: 100%;
+}
+
+.publications-page a {
+  color: #2b6cb0 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
+  transition: color 0.15s ease;
+}
+
+.publications-page a:hover {
+  color: #1a4971 !important;
+}
+
+html.dark .publications-page a {
+  color: #63b3ed !important;
+}
+
+html.dark .publications-page a:hover {
+  color: #90cdf4 !important;
+}
+
+.publications-page h2,
+.publications-page h3 {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+  margin-top: 2.25rem !important;
+  margin-bottom: 0.35rem !important;
+}
+
+.publications-page h2 a,
+.publications-page h3 a {
+  font-weight: 700 !important;
+}
+
+.publications-page p {
+  margin-top: 0.35rem !important;
+  margin-bottom: 0.45rem !important;
+  font-size: 0.975rem !important;
+  line-height: 1.55 !important;
+}
+
+.publications-page .pub-item {
+  margin-bottom: 2.25rem;
+}
+
 /* Publications List */
 .publication-card {
   padding: 1.25rem;
@@ -534,3 +599,208 @@ html.dark .collapsible-content {
   transform: translateX(2px);
 }
 
+
+/* =====================================================================
+   Blog styling (posts list + post pages)
+   Modeled on gregorygundersen.com/blog: system sans-serif, 15px body,
+   1.6 line-height, ~700px measure, thin rules, muted uppercase dates.
+   ===================================================================== */
+.gg {
+  --gg-text: rgba(0, 0, 0, 0.8);
+  --gg-muted: rgba(0, 0, 0, 0.5);
+  --gg-rule: rgba(0, 0, 0, 0.1);
+  --gg-rule-strong: rgba(0, 0, 0, 0.2);
+  --gg-quote: #777;
+  --gg-quote-bar: #ddd;
+  --gg-code-bg: rgba(0, 0, 0, 0.035);
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  color: var(--gg-text);
+  line-height: 1.5em;
+}
+html.dark .gg {
+  --gg-text: rgba(255, 255, 255, 0.85);
+  --gg-muted: rgba(255, 255, 255, 0.5);
+  --gg-rule: rgba(255, 255, 255, 0.12);
+  --gg-rule-strong: rgba(255, 255, 255, 0.22);
+  --gg-quote: #9a9a9a;
+  --gg-quote-bar: #444;
+  --gg-code-bg: rgba(255, 255, 255, 0.05);
+}
+.gg a { color: var(--gg-text); text-decoration: underline; }
+.gg a:hover { color: var(--gg-muted); text-decoration: none; }
+.gg h1, .gg h2, .gg h3, .gg h4, .gg h5, .gg h6 {
+  font-family: inherit;
+  color: var(--gg-text);
+}
+
+/* ---------- Post front matter ---------- */
+.gg-front-matter {
+  padding: 20px 0;
+  border-top: 1px solid var(--gg-rule);
+  border-bottom: 1px solid var(--gg-rule);
+}
+.gg-front-matter h1 {
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1.2em;
+  margin: 0.67em 0;
+}
+.gg-front-matter h4 {
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 1.5em;
+  margin: 1.33em 0;
+}
+.gg-bylines { display: flex; flex-wrap: wrap; gap: 0 20px; }
+.gg-byline h3,
+.gg-byline p { margin: 0; }
+.gg-byline h3 {
+  font-size: 9px;
+  text-transform: uppercase;
+  color: var(--gg-muted);
+  letter-spacing: 0.02em;
+}
+.gg-byline p { font-size: 10px; line-height: 1.6em; }
+
+/* ---------- Post body ---------- */
+.gg-article {
+  font-size: 15px;
+  line-height: 1.6em;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.gg-article p { margin: 1em 0; }
+.gg-article h2 {
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 1.2em;
+  border-bottom: 1px solid var(--gg-rule-strong);
+  padding-bottom: 1rem;
+  padding-top: 1em;
+  margin: 0.83em 0;
+}
+.gg-article h3 { font-size: 1.17em; font-weight: bold; margin: 1.5em 0 0.6em; }
+.gg-article h4 { font-size: 1em; font-weight: bold; margin: 1.33em 0 0.5em; }
+.gg-article ul, .gg-article ol { padding: 0 0 0 20px; margin: 1em 0; }
+.gg-article ul { list-style: disc; }
+.gg-article ol { list-style: decimal; }
+.gg-article li { margin: 0.25em 0; }
+.gg-article strong { font-weight: bold; }
+.gg-article em { font-style: italic; }
+.gg-article blockquote {
+  margin: 1em 0;
+  padding: 0 1em;
+  color: var(--gg-quote);
+  border-left: 0.25em solid var(--gg-quote-bar);
+}
+.gg-article img { max-width: 100%; height: auto; margin: 0 auto; display: block; }
+.gg-article figure {
+  margin: 30px 0;
+  padding: 20px 0;
+  border-top: 1px solid var(--gg-rule-strong);
+  border-bottom: 1px solid var(--gg-rule-strong);
+}
+.gg-article figcaption {
+  padding-top: 15px;
+  font-size: 13px;
+  line-height: 1.4em;
+}
+.gg-article figcaption strong { font-weight: bold; }
+.gg-article hr { border: 0; border-top: 1px solid var(--gg-rule); margin: 2em 0; }
+
+/* code */
+.gg-article code {
+  font-family: Menlo, Monaco, Consolas, monospace;
+  font-size: 0.87em;
+  background: var(--gg-code-bg);
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+.gg-article pre {
+  border-top: 1px solid var(--gg-rule-strong);
+  border-bottom: 1px solid var(--gg-rule-strong);
+  font-size: 13px;
+  line-height: 1.3em;
+  padding: 12px 0;
+  margin: 1.5em 0;
+  overflow-x: auto;
+  background: transparent;
+  color: var(--gg-text);
+}
+.gg-article pre code { background: transparent; padding: 0; font-size: inherit; }
+
+/* tables: booktabs-style */
+.gg-article table {
+  font-size: 14px;
+  margin: 1.5em auto;
+  border-collapse: collapse;
+  border-top: 2px solid var(--gg-text);
+  border-bottom: 1px solid var(--gg-text);
+}
+.gg-article thead th { border-bottom: 1px solid var(--gg-text); padding: 0 8px; font-weight: bold; }
+.gg-article td { text-align: center; padding: 0 8px; }
+
+/* math */
+.gg-article .katex-display { margin: 1.2em 0; overflow-x: auto; overflow-y: hidden; }
+
+/* footnotes (Hugo/Goldmark output) */
+.gg-article sup a, .gg-article .footnote-ref { text-decoration: none; }
+.gg-article .footnotes {
+  margin-top: 100px;
+  font-size: 12px;
+  color: var(--gg-muted);
+  border-top: 1px solid var(--gg-rule);
+}
+.gg-article .footnotes hr { display: none; }
+.gg-article .footnotes ol { padding-left: 15px; padding-top: 20px; }
+
+/* ---------- Blog index ---------- */
+.gg-blog { margin-top: 30px; margin-bottom: 100px; }
+.gg-intro {
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.4em;
+  margin-bottom: 30px;
+}
+.gg-intro p { margin: 0; }
+.gg-tag-nav { list-style: none; padding: 0 0 30px 0; margin: 0; line-height: 1.3em; }
+.gg-tag-nav span { font-size: 14px; display: inline-block; padding-right: 15px; }
+.gg-tag-nav li { display: inline; padding-right: 10px; }
+.gg-tag-nav li a { font-size: 14px; font-weight: bold; text-decoration: none; }
+.gg-tag-nav li a:hover { text-decoration: underline; }
+
+.gg-year-group { position: relative; }
+.gg-year {
+  position: absolute;
+  left: -100px;
+  width: 80px;
+  text-align: right;
+  font-size: 18px;
+  line-height: 1.5em;
+  color: var(--gg-muted);
+}
+.gg-post { margin-bottom: 25px; }
+.gg-post-title { margin: 0; font-weight: bold; }
+.gg-post-title a { font-size: 18px; text-decoration: none; }
+.gg-post-title a:hover { text-decoration: underline; color: var(--gg-text); }
+.gg-post-date {
+  text-transform: uppercase;
+  color: var(--gg-muted);
+  font-size: 12px;
+  font-weight: bold;
+  margin: 4px 0;
+}
+.gg-post-subtitle { font-size: 14px; margin: 0; line-height: 1.5em; }
+
+@media (max-width: 1000px) {
+  .gg-year {
+    position: static;
+    width: auto;
+    text-align: left;
+    margin: 10px 0 12px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--gg-rule);
+  }
+}

@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Fri, 02 Oct 2026 12:00:00 +0530</lastBuildDate>
+			<lastBuildDate>Sat, 03 Oct 2026 00:05:53 -0400</lastBuildDate>
 		
 			<atom:link href="https://lokeshbalasubramanian.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Understanding RoPE</title>
+				<link>https://lokeshbalasubramanian.github.io/posts/rope/</link>
+				<pubDate>Sat, 03 Oct 2026 00:05:53 -0400</pubDate>
+				<guid>https://lokeshbalasubramanian.github.io/posts/rope/</guid>
+				<description>&lt;h2 id=&#34;need-for-positional-encodings-pe&#34;&gt;Need for Positional Encodings (PE)&lt;/h2&gt;&#xA;&lt;p&gt;A transformer language model[1] maps a sequence of vectors to a probability distribution over the next vector in the sequence.&#xA;In language models, each of these vectors represent tokens. However, the tokens are invariant to their positions in the sequence. [add_citation?] and this is a problem because the order of tokens clearly matters for the next token prediction task.&lt;/p&gt;&#xA;&lt;p&gt;This problem is solved with the introduction of positional Encodings (PE). A PE is a vector that contains information about the position of the token in the sequence. PE&amp;rsquo;s ideally should have the following properties :&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>Hello World</title>
 				<link>https://lokeshbalasubramanian.github.io/posts/hello-world/</link>

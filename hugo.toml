@@ -19,20 +19,32 @@ theme = 'hugo-paper'
 
   avatar = '/images/profile_pic.png'
   mainSections = ['posts']
+  math = true
 
 [menu]
+  [[menu.main]]
+    identifier = "publications"
+    name = "Publications"
+    url = "/publications/"
+    weight = 10
   [[menu.main]]
     identifier = "posts"
     name = "Posts"
     url = "/posts/"
-    weight = 10
+    weight = 20
   [[menu.main]]
     identifier = "cv"
     name = "CV"
     url = "/resume.pdf"
-    weight = 20
+    weight = 30
 
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)'], ['$', '$']]
