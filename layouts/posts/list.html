@@ -1,5 +1,5 @@
 {{- define "main" -}}
-<div class="gg gg-blog not-prose">
+<div id="gg" class="gg gg-blog not-prose">
   {{- with .Content -}}
   <div class="gg-intro">{{- . -}}</div>
   {{- end -}}
@@ -7,7 +7,6 @@
   {{- $tags := site.Taxonomies.tags -}}
   {{- if $tags -}}
   <ul class="gg-tag-nav">
-    <span>Tags:</span>
     {{- range $tags.ByCount -}}
     <li><a href="{{- .Page.RelPermalink -}}">{{- .Page.Title -}}</a></li>
     {{- end -}}
@@ -15,17 +14,12 @@
   {{- end -}}
 
   <div class="gg-posts">
-    {{- range .RegularPages.GroupByDate "2006" -}}
-    <div class="gg-year-group">
-      <div class="gg-year">{{- .Key -}}</div>
-      {{- range .Pages -}}
-      <div class="gg-post">
-        <p class="gg-post-title"><a href="{{- .RelPermalink -}}">{{- .Title -}}</a></p>
-        <p class="gg-post-date">{{- .Date.Format "02 January 2006" -}}</p>
-        {{- with (or .Params.description .Params.subtitle .Params.summary) -}}
-        <p class="gg-post-subtitle">{{- . | markdownify -}}</p>
-        {{- end -}}
-      </div>
+    {{- range .RegularPages -}}
+    <div class="gg-post">
+      <p class="gg-post-title"><a href="{{- .RelPermalink -}}">{{- .Title -}}</a></p>
+      <p class="gg-post-date">{{- .Date.Format "02 January 2006" -}}</p>
+      {{- with (or .Params.description .Params.subtitle .Params.summary) -}}
+      <p class="gg-post-subtitle">{{- . | markdownify -}}</p>
       {{- end -}}
     </div>
     {{- end -}}

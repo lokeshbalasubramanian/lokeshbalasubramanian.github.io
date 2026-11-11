@@ -1,4 +1,4 @@
 ---
 title: "Blog"
 ---
-Thoughts, tutorials, and updates.
+Welcome to my personal blog.

@@ -603,204 +603,184 @@ html.dark .collapsible-content {
 /* =====================================================================
    Blog styling (posts list + post pages)
    Modeled on gregorygundersen.com/blog: system sans-serif, 15px body,
-   1.6 line-height, ~700px measure, thin rules, muted uppercase dates.
+   1.6 line-height, 700px measure, ruled h2s, muted uppercase dates.
+
+   The theme's reset uses selectors like `h1:not(#\#):not(#\#)` (2 ids),
+   so every rule here is prefixed with `#gg#gg#gg` (3 ids) to win.
    ===================================================================== */
-.gg {
+#gg#gg#gg {
   --gg-text: rgba(0, 0, 0, 0.8);
   --gg-muted: rgba(0, 0, 0, 0.5);
+  --gg-hover: rgba(0, 0, 0, 0.5);
   --gg-rule: rgba(0, 0, 0, 0.1);
   --gg-rule-strong: rgba(0, 0, 0, 0.2);
   --gg-quote: #777;
   --gg-quote-bar: #ddd;
-  --gg-code-bg: rgba(0, 0, 0, 0.035);
+  --gg-code-bg: rgba(0, 0, 0, 0.04);
   max-width: 700px;
   margin: 0 auto;
   font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
-  color: var(--gg-text);
+  font-size: 16px;
   line-height: 1.5em;
+  color: var(--gg-text);
 }
-html.dark .gg {
+html.dark #gg#gg#gg {
   --gg-text: rgba(255, 255, 255, 0.85);
   --gg-muted: rgba(255, 255, 255, 0.5);
+  --gg-hover: rgba(255, 255, 255, 0.55);
   --gg-rule: rgba(255, 255, 255, 0.12);
   --gg-rule-strong: rgba(255, 255, 255, 0.22);
   --gg-quote: #9a9a9a;
   --gg-quote-bar: #444;
-  --gg-code-bg: rgba(255, 255, 255, 0.05);
+  --gg-code-bg: rgba(255, 255, 255, 0.06);
 }
-.gg a { color: var(--gg-text); text-decoration: underline; }
-.gg a:hover { color: var(--gg-muted); text-decoration: none; }
-.gg h1, .gg h2, .gg h3, .gg h4, .gg h5, .gg h6 {
-  font-family: inherit;
-  color: var(--gg-text);
-}
+#gg#gg#gg a { color: var(--gg-text); text-decoration: underline; }
+#gg#gg#gg a:hover { color: var(--gg-hover); text-decoration: none; }
+#gg#gg#gg :is(h1, h2, h3, h4, h5, h6) { font-family: inherit; color: var(--gg-text); font-weight: bold; }
 
 /* ---------- Post front matter ---------- */
-.gg-front-matter {
-  padding: 20px 0;
+/* Full-width rules above and below, like the reference site. */
+body:has(#gg) { overflow-x: clip; }
+#gg#gg#gg .gg-front-matter { position: relative; padding: 20px 0; }
+#gg#gg#gg .gg-front-matter::before,
+#gg#gg#gg .gg-front-matter::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
   border-top: 1px solid var(--gg-rule);
-  border-bottom: 1px solid var(--gg-rule);
 }
-.gg-front-matter h1 {
-  font-size: 2em;
-  font-weight: bold;
+#gg#gg#gg .gg-front-matter::before { top: 0; }
+#gg#gg#gg .gg-front-matter::after { bottom: 0; }
+#gg#gg#gg .gg-front-matter h1 {
+  font-size: 2.6em;
   line-height: 1.2em;
-  margin: 0.67em 0;
+  letter-spacing: -0.01em;
+  margin: 0.5em 0 0.6em;
 }
-.gg-front-matter h4 {
-  font-size: 1em;
-  font-weight: bold;
+#gg#gg#gg .gg-front-matter h4 {
+  font-size: 1.15em;
   line-height: 1.5em;
-  margin: 1.33em 0;
+  margin: 0 0 1.2em;
 }
-.gg-bylines { display: flex; flex-wrap: wrap; gap: 0 20px; }
-.gg-byline h3,
-.gg-byline p { margin: 0; }
-.gg-byline h3 {
-  font-size: 9px;
-  text-transform: uppercase;
-  color: var(--gg-muted);
-  letter-spacing: 0.02em;
+#gg#gg#gg .gg-byline {
+  margin: 0 0 0.4em;
+  font-size: 12px;
+  line-height: 1.6em;
+  color: var(--gg-text);
 }
-.gg-byline p { font-size: 10px; line-height: 1.6em; }
+#gg#gg#gg .gg-byline .gg-sep { margin: 0 0.5em; color: var(--gg-muted); }
 
 /* ---------- Post body ---------- */
-.gg-article {
-  font-size: 15px;
+#gg#gg#gg .gg-article {
+  font-size: 16px;
   line-height: 1.6em;
   margin-top: 50px;
   margin-bottom: 50px;
 }
-.gg-article p { margin: 1em 0; }
-.gg-article h2 {
-  font-size: 26px;
-  font-weight: bold;
+#gg#gg#gg .gg-article p { margin: 1em 0; }
+#gg#gg#gg .gg-article h2 {
+  font-size: 28px;
   line-height: 1.2em;
   border-bottom: 1px solid var(--gg-rule-strong);
-  padding-bottom: 1rem;
   padding-top: 1em;
-  margin: 0.83em 0;
+  padding-bottom: 0.6em;
+  margin: 0.8em 0 1em;
 }
-.gg-article h3 { font-size: 1.17em; font-weight: bold; margin: 1.5em 0 0.6em; }
-.gg-article h4 { font-size: 1em; font-weight: bold; margin: 1.33em 0 0.5em; }
-.gg-article ul, .gg-article ol { padding: 0 0 0 20px; margin: 1em 0; }
-.gg-article ul { list-style: disc; }
-.gg-article ol { list-style: decimal; }
-.gg-article li { margin: 0.25em 0; }
-.gg-article strong { font-weight: bold; }
-.gg-article em { font-style: italic; }
-.gg-article blockquote {
+#gg#gg#gg .gg-article h3 { font-size: 20px; line-height: 1.3em; margin: 1.6em 0 0.6em; }
+#gg#gg#gg .gg-article h4 { font-size: 17px; margin: 1.4em 0 0.5em; }
+#gg#gg#gg .gg-article ul,
+#gg#gg#gg .gg-article ol { padding: 0 0 0 20px; margin: 1em 0; }
+#gg#gg#gg .gg-article ul { list-style: disc; }
+#gg#gg#gg .gg-article ol { list-style: decimal; }
+#gg#gg#gg .gg-article li { margin: 0.3em 0; }
+#gg#gg#gg .gg-article strong { font-weight: bold; }
+#gg#gg#gg .gg-article em { font-style: italic; }
+#gg#gg#gg .gg-article blockquote {
   margin: 1em 0;
   padding: 0 1em;
   color: var(--gg-quote);
   border-left: 0.25em solid var(--gg-quote-bar);
 }
-.gg-article img { max-width: 100%; height: auto; margin: 0 auto; display: block; }
-.gg-article figure {
+#gg#gg#gg .gg-article img { max-width: 100%; height: auto; margin: 0 auto; display: block; }
+#gg#gg#gg .gg-article figure {
   margin: 30px 0;
   padding: 20px 0;
   border-top: 1px solid var(--gg-rule-strong);
   border-bottom: 1px solid var(--gg-rule-strong);
 }
-.gg-article figcaption {
-  padding-top: 15px;
-  font-size: 13px;
-  line-height: 1.4em;
-}
-.gg-article figcaption strong { font-weight: bold; }
-.gg-article hr { border: 0; border-top: 1px solid var(--gg-rule); margin: 2em 0; }
+#gg#gg#gg .gg-article figcaption { padding-top: 15px; font-size: 13px; line-height: 1.4em; }
+#gg#gg#gg .gg-article hr { border: 0; border-top: 1px solid var(--gg-rule); margin: 2em 0; }
 
 /* code */
-.gg-article code {
+#gg#gg#gg .gg-article code {
   font-family: Menlo, Monaco, Consolas, monospace;
-  font-size: 0.87em;
+  font-size: 0.85em;
   background: var(--gg-code-bg);
   padding: 0.1em 0.3em;
   border-radius: 3px;
 }
-.gg-article pre {
+#gg#gg#gg .gg-article pre {
   border-top: 1px solid var(--gg-rule-strong);
   border-bottom: 1px solid var(--gg-rule-strong);
   font-size: 13px;
-  line-height: 1.3em;
+  line-height: 1.4em;
   padding: 12px 0;
   margin: 1.5em 0;
   overflow-x: auto;
   background: transparent;
   color: var(--gg-text);
 }
-.gg-article pre code { background: transparent; padding: 0; font-size: inherit; }
+#gg#gg#gg .gg-article pre code { background: transparent; padding: 0; font-size: inherit; }
 
 /* tables: booktabs-style */
-.gg-article table {
+#gg#gg#gg .gg-article table {
   font-size: 14px;
   margin: 1.5em auto;
   border-collapse: collapse;
   border-top: 2px solid var(--gg-text);
   border-bottom: 1px solid var(--gg-text);
 }
-.gg-article thead th { border-bottom: 1px solid var(--gg-text); padding: 0 8px; font-weight: bold; }
-.gg-article td { text-align: center; padding: 0 8px; }
+#gg#gg#gg .gg-article thead th { border-bottom: 1px solid var(--gg-text); padding: 0 8px; }
+#gg#gg#gg .gg-article td { text-align: center; padding: 0 8px; }
 
 /* math */
-.gg-article .katex-display { margin: 1.2em 0; overflow-x: auto; overflow-y: hidden; }
+#gg#gg#gg .gg-article .katex-display { margin: 1.2em 0; overflow-x: auto; overflow-y: hidden; }
 
-/* footnotes (Hugo/Goldmark output) */
-.gg-article sup a, .gg-article .footnote-ref { text-decoration: none; }
-.gg-article .footnotes {
+/* footnotes (Goldmark output) */
+#gg#gg#gg .gg-article sup a { text-decoration: none; }
+#gg#gg#gg .gg-article .footnotes {
   margin-top: 100px;
   font-size: 12px;
   color: var(--gg-muted);
   border-top: 1px solid var(--gg-rule);
 }
-.gg-article .footnotes hr { display: none; }
-.gg-article .footnotes ol { padding-left: 15px; padding-top: 20px; }
+#gg#gg#gg .gg-article .footnotes hr { display: none; }
+#gg#gg#gg .gg-article .footnotes ol { padding-left: 15px; padding-top: 20px; }
 
 /* ---------- Blog index ---------- */
-.gg-blog { margin-top: 30px; margin-bottom: 100px; }
-.gg-intro {
-  font-size: 14px;
+#gg#gg#gg.gg-blog { margin-top: 10px; margin-bottom: 100px; }
+#gg#gg#gg .gg-intro {
+  font-size: 15px;
   font-style: italic;
   line-height: 1.4em;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
-.gg-intro p { margin: 0; }
-.gg-tag-nav { list-style: none; padding: 0 0 30px 0; margin: 0; line-height: 1.3em; }
-.gg-tag-nav span { font-size: 14px; display: inline-block; padding-right: 15px; }
-.gg-tag-nav li { display: inline; padding-right: 10px; }
-.gg-tag-nav li a { font-size: 14px; font-weight: bold; text-decoration: none; }
-.gg-tag-nav li a:hover { text-decoration: underline; }
-
-.gg-year-group { position: relative; }
-.gg-year {
-  position: absolute;
-  left: -100px;
-  width: 80px;
-  text-align: right;
-  font-size: 18px;
-  line-height: 1.5em;
-  color: var(--gg-muted);
-}
-.gg-post { margin-bottom: 25px; }
-.gg-post-title { margin: 0; font-weight: bold; }
-.gg-post-title a { font-size: 18px; text-decoration: none; }
-.gg-post-title a:hover { text-decoration: underline; color: var(--gg-text); }
-.gg-post-date {
+#gg#gg#gg .gg-intro p { margin: 0; }
+#gg#gg#gg .gg-tag-nav { list-style: none; padding: 0 0 30px 0; margin: 0; line-height: 1.3em; }
+#gg#gg#gg .gg-tag-nav li { display: inline; padding-right: 12px; }
+#gg#gg#gg .gg-tag-nav li a { font-size: 14px; font-weight: bold; text-decoration: none; }
+#gg#gg#gg .gg-tag-nav li a:hover { text-decoration: underline; }
+#gg#gg#gg .gg-post { margin-bottom: 28px; }
+#gg#gg#gg .gg-post-title { margin: 0; font-weight: bold; line-height: 1.3em; }
+#gg#gg#gg .gg-post-title a { font-size: 20px; text-decoration: none; }
+#gg#gg#gg .gg-post-title a:hover { text-decoration: underline; color: var(--gg-text); }
+#gg#gg#gg .gg-post-date {
   text-transform: uppercase;
   color: var(--gg-muted);
   font-size: 12px;
   font-weight: bold;
   margin: 4px 0;
 }
-.gg-post-subtitle { font-size: 14px; margin: 0; line-height: 1.5em; }
-
-@media (max-width: 1000px) {
-  .gg-year {
-    position: static;
-    width: auto;
-    text-align: left;
-    margin: 10px 0 12px;
-    padding-bottom: 4px;
-    border-bottom: 1px solid var(--gg-rule);
-  }
-}
+#gg#gg#gg .gg-post-subtitle { font-size: 15px; margin: 0; line-height: 1.5em; }
